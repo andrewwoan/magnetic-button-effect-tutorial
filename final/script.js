@@ -5,7 +5,6 @@ let mousePosition = { x: 0, y: 0 };
 window.addEventListener("mousemove", (e) => {
     mousePosition.x = e.pageX;
     mousePosition.y = e.pageY;
-    // console.log(mousePosition.x, mousePosition.y);
 });
 
 const calculateDistance = (x1, y1, x2, y2) => {
@@ -18,7 +17,7 @@ class MagneticObject {
         this.domElement = domElement;
         this.boundingClientRect = domElement.getBoundingClientRect();
         this.triggerArea = 200;
-        this.interploationFactor = 0.8;
+        this.interpolationFactor = 0.8;
 
         this.lerpingData = {
             x: { current: 0, target: 0 },
@@ -67,13 +66,9 @@ class MagneticObject {
             this.lerpingData[item].current = lerp(
                 this.lerpingData[item].current,
                 this.lerpingData[item].target,
-                this.interploationFactor
+                this.interpolationFactor
             );
         }
-
-        // console.log(
-        //     `translate(${this.lerpingData["x"].current}px, ${this.lerpingData["y"].current}px)`
-        // );
 
         this.domElement.style.transform = `translate(${this.lerpingData["x"].current}px, ${this.lerpingData["y"].current}px)`;
 
