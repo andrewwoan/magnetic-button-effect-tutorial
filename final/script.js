@@ -1,9 +1,3 @@
-let windowSize = { width: window.innerWidth, height: window.innerHeight };
-window.addEventListener("resize", () => {
-    windowSize.width = window.innerWidth;
-    windowSize.height = window.innerHeight;
-});
-
 const lerp = (current, target, factor) =>
     current * (1 - factor) + target * factor;
 
