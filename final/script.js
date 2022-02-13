@@ -15,7 +15,7 @@ const calculateDistance = (x1, y1, x2, y2) => {
 class MagneticObject {
     constructor(domElement) {
         this.domElement = domElement;
-        this.boundingClientRect = domElement.getBoundingClientRect();
+        this.boundingClientRect = this.domElement.getBoundingClientRect();
         this.triggerArea = 200;
         this.interpolationFactor = 0.8;
 
@@ -56,6 +56,7 @@ class MagneticObject {
                     (this.boundingClientRect.top +
                         this.boundingClientRect.height / 2)) *
                 0.2;
+            console.log(targetHolder);
         } else {
             this.domElement.classList.remove("focus");
         }
