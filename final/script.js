@@ -52,6 +52,7 @@ class MagneticObject {
         let targetHolder = { x: 0, y: 0 };
 
         if (distanceFromMouseToCenter < this.triggerArea) {
+            this.domElement.classList.add("focus");
             targetHolder.x =
                 (mousePosition.x -
                     (this.boundingClientRect.left +
@@ -62,6 +63,8 @@ class MagneticObject {
                     (this.boundingClientRect.top +
                         this.boundingClientRect.height / 2)) *
                 0.2;
+        } else {
+            this.domElement.classList.remove("focus");
         }
         this.lerpingData["x"].target = targetHolder.x;
         this.lerpingData["y"].target = targetHolder.y;

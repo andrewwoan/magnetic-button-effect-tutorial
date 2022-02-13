@@ -24,12 +24,14 @@
     transition: all 0.2s;
 }
 
-.call-to-action-btn:hover {
+/* .call-to-action-btn:hover {
     color: white;
     background-color: black;
     transition: all 0.2s;
-}
+} */
 
-.pointer {
-    cursor: pointer;
+.focus {
+    color: white;
+    background-color: black;
+    transition: all 0.2s;
 }
